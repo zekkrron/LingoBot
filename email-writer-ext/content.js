@@ -62,8 +62,9 @@ function injectButton() {
             button.innerHTML = 'Generating...';
             button.disabled = true;
 
+            const BACKEND_URL = 'https://email-writer-app-latest-bvwz.onrender.com/api/email/generate';
             const emailContent = getEmailContent();
-            const response = await fetch('https://email-writer-app-latest-bvwz.onrender.com/api/email/generate', {
+            const response = await fetch(BACKEND_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
